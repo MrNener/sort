@@ -24,14 +24,14 @@ Array.prototype.bucketSort = function() {
   // 遍历原数组把元素当作桶的编号，然后桶里放数字 1 表示该元素出现了一次
   // 如果指定下标的桶是存在的，就把桶内的数字加 1 表示又出现了一次
   while(i--) {
-    buckets[arr[i]] = (buckets[arr[i]] || 1 ) + 1;
+    buckets[arr[i]] = (buckets[arr[i]] +1|| 1 ) ;
   }
 
   // 现在要把排好位置的桶里的数字倒出来
   // 遍历桶
   for (index in buckets) {
     // 遍历桶里的数字，是几就表示当前桶所代表的数字出现了几次
-    i = buckets[index] - 1;
+    i = buckets[index];
     while ( i-- ) {
       // 加号是把字符串转数字
       output.push(+index);
